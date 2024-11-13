@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import './App.css';
 import { useDictionary } from './hooks/useDictionary';
 import Divider from './components/Atoms/Divider/Divider';
-
+import Title from './components/Organisms/Title/Title';
+import Position from './components/Organisms/Position/Position';
 
 // declare const acquireVsCodeApi: () => {
 //   postMessage: (message: any) => void;
@@ -33,21 +34,21 @@ const App = () => {
   return (
     <div ref={divRef} className="app-container">
       <div className={`app-content ${isWidthTooSmall ? 'app-content--blurred' : ''}`}>
-        <Divider/>
-        <div>TitleView</div>
-        <Divider/>
-        <div>PositionView</div>
-        <Divider/>
+        <Divider />
+        <Title />
+        <Divider />
+        <Position />
+        <Divider />
         <div>AutoLayoutView</div>
-        <Divider/>
+        <Divider />
         <div>AppearanceView</div>
-        <Divider/>
+        <Divider />
         <div>FillView</div>
-        <Divider/>
+        <Divider />
         <div>StrokeView</div>
-        <Divider/>
+        <Divider />
         <div>EffectsView</div>
-        <Divider/>
+        <Divider />
       </div>
       {isWidthTooSmall && (
         <div className="width-overlay">
