@@ -2,6 +2,7 @@ import React from 'react';
 import Text from '../../Atoms/Text/Text';
 import './Position.css';
 import HighlightAltIcon from '@mui/icons-material/HighlightAlt';
+import Input from '../../Atoms/Input/Input';
 
 const Position = () => {
   return (
@@ -12,7 +13,7 @@ const Position = () => {
       </div>
       <div className="actionRowContainer">
         <div className="actionRowBox">
-          <Text text={'Position'} type={'heading'} />
+          <Input />
           <Text text={'Position'} type={'heading'} />
           <Text text={'Position'} type={'heading'} />
         </div>
