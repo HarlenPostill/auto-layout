@@ -9,13 +9,20 @@ const Position = () => {
     <div className="positionBox">
       <div className="topRow">
         <Text text={'Position'} type={'heading'} />
-        <HighlightAltIcon sx={{ fontSize: 24 }} />
+        <HighlightAltIcon sx={{ fontSize: 14 }} />
       </div>
       <div className="actionRowContainer">
         <div className="actionRowBox">
-          <Input />
-          <Text text={'Position'} type={'heading'} />
-          <Text text={'Position'} type={'heading'} />
+          <Input
+            variant="outlined"
+            leftContent={{
+              type: 'icon',
+              content: <HighlightAltIcon sx={{ fontSize: 11 }} />,
+            }}
+            defaultValue="Custom value"
+          />
+          <Input defaultValue="Custom value" />
+          <Input leftContent={{ type: 'text', content: 'Label' }} />
         </div>
         <div className="actionRowBox">
           <Text text={'Position'} type={'heading'} />

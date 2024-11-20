@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Input.css';
 
-const Input = () => {
+type InputVariant = 'filled' | 'outlined';
+type LeftContent = {
+  type: 'text' | 'icon';
+  content: string | React.ReactNode;
+};
+
+interface InputProps {
+  variant?: InputVariant;
+  leftContent?: LeftContent;
+  defaultValue?: string;
+}
+
+const Input = ({
+  variant = 'filled',
+  leftContent = { type: 'text', content: 'X' },
+  defaultValue = '107',
+}: InputProps) => {
+  const [value, setValue] = useState(defaultValue);
+
+  const containerClassName = `inputContainer ${variant === 'outlined' ? 'outlined' : ''}`;
+
+  const renderLeftContent = () => {
+    if (leftContent.type === 'text') {
+      return <div className="leftIcon">{leftContent.content}</div>;
+    }
+    return leftContent.content;
+  };
+
   return (
-    <div className="inputContainer">
-      <div className="leftIcon">{'X'}</div>
-      <div className="TextInput">{'107'}</div>
+    <div className={containerClassName}>
+      {renderLeftContent()}
+      <input
+        type="text"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        className="TextInput"
+      />
     </div>
   );
 };
